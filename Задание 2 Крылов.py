@@ -1,7 +1,7 @@
 import os
 
 def clear_screen():
-    # Очищает экран
+    # очищает экран
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def print_board(board):
@@ -31,17 +31,17 @@ def get_input(player, board):
     while True:
         try:
             print(f"\nХод игрока {player}")
-            row = int(input("Введите номер строки (0-2): "))
-            col = int(input("Введите номер столбца (0-2): "))
+            row = int(input("введите номер строки (0-2): "))
+            col = int(input("введите номер столбца (0-2): "))
             if row not in range(3) or col not in range(3):
-                print("Ошибка: допустимые значения — от 0 до 2.")
+                print("ошибка: допустимые значения — от 0 до 2.")
                 continue
             if board[row][col] != " ":
-                print("Ошибка: клетка уже занята.")
+                print("ошибка: клетка уже занята.")
                 continue
             return row, col
         except ValueError:
-            print("Ошибка: введите целое число.")
+            print("ошибка: введите целое число.")
 
 def main():
     board = [[" " for _ in range(3)] for _ in range(3)]
@@ -49,7 +49,7 @@ def main():
 
     while True:
         clear_screen()
-        print("Добро пожаловать в Крестики-нолики!")
+        print("добро пожаловать в крестики нолики")
         print_board(board)
 
         row, col = get_input(current_player, board)
@@ -58,7 +58,7 @@ def main():
         if check_win(board):
             clear_screen()
             print_board(board)
-            print(f"\nПоздравляем! Игрок {current_player} победил!")
+            print(f"\n игрок {current_player} победил")
             break
         if check_draw(board):
             clear_screen()
