@@ -58,12 +58,12 @@ def main():
         if check_win(board):
             clear_screen()
             print_board(board)
-            print(f"\n игрок {current_player} победил")
+            print(f"\nигрок {current_player} победил")
             break
         if check_draw(board):
             clear_screen()
             print_board(board)
-            print("\nНичья!")
+            print("\nничья")
             break
 
         current_player = "O" if current_player == "X" else "X"
